@@ -11,8 +11,7 @@ RUN git clone https://github.com/foosel/OctoPrint.git \
     && virtualenv venv \
     && ./venv/bin/pip install . 
 
-ENV PATH "$PATH:$HOME/OctoPrint/venv/bin"
+ENV PATH "$PATH:/home/pi/OctoPrint/venv/bin"
 
-ENTRYPOINT octoprint 
+ENTRYPOINT 'octoprint' 
 CMD 'serve'
-
