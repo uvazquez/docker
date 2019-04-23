@@ -4,7 +4,7 @@ RUN useradd -ms /bin/bash pi
 
 USER pi
 
-# WORKDIR $HOME
+WORKDIR $HOME
 
 RUN git clone https://github.com/foosel/OctoPrint.git \
     && cd OctoPrint \
