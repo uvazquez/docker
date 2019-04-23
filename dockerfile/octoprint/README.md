@@ -11,3 +11,15 @@
 **Known errors**
 
  - > `Unexpected error while connecting to serial port: AUTO SerialException: '[Errno 13] could not open port /dev/ttyUSB0: [Errno 13] Permission denied: '/dev/ttyUSB0'' @ comm.py:_openSerial:2478 (hook default)`
+
+```
+OctoPrint by default assumes your printer to be available under one of these devices:
+
+    baselist = baselist \
+               + glob.glob("/dev/ttyUSB*") \
+               + glob.glob("/dev/ttyACM*") \
+               + glob.glob("/dev/tty.usb*") \
+               + glob.glob("/dev/cu.*") \
+               + glob.glob("/dev/cuaU*") \
+               + glob.glob("/dev/rfcomm*")
+```
